@@ -23,7 +23,7 @@ public class EmployeeService {
     }
 
     public List<Employee> getAllEmployeeData() {
-        return (List<Employee>) employeeRepository.findAll();
+        return (List<Employee>) employeeRepository.findAllByOrderByFirstNameAsc();
     }
 
 }

@@ -1,9 +1,14 @@
 package com.sureena_wadhwa.employeePortal.repository;
 
 import com.sureena_wadhwa.employeePortal.entity.Employee;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EmployeeRepository extends CrudRepository<Employee,Long> {
+import java.util.List;
 
+public interface EmployeeRepository extends JpaRepository<Employee,Long> {
+
+    public Employee save(Employee employee);
+
+    public List<Employee> findAllByOrderByFirstNameAsc();
 
 }

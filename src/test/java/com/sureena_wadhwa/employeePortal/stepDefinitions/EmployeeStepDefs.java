@@ -101,7 +101,7 @@ public class EmployeeStepDefs {
     public void listOfEmployeesShouldBeFetched() throws IOException, JSONException {
         File file = ResourceUtils.getFile("classpath:templates/allEmployeeDataResponse.json");
         String jsonRequest =  new String(Files.readAllBytes(file.toPath()));
-        JSONAssert.assertEquals(jsonResponse,jsonRequest,false);
+        JSONAssert.assertEquals(jsonResponse,jsonRequest,true);
 
     }
 }
