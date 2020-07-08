@@ -13,13 +13,19 @@ import javax.persistence.Id;
 public class Employee {
 
     private String firstName;
+    private String lastName;
+    private String gender;
+    private String department;
 
     @Id
     @GeneratedValue
     private Long employeeId;
 
-    public Employee(String firstName)
+    public Employee(String firstName,String lastName,String gender,String department)
     {
         this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.department = department;
     }
 }

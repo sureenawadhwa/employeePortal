@@ -22,7 +22,7 @@ public class EmployeeControllerTest {
     public void should_call_service_test(){
         CreateEmployeeRequest request = mock(CreateEmployeeRequest.class);
         CreateEmployeeCommand command = mock(CreateEmployeeCommand.class);
-        Employee employee = new Employee("Sureena");
+        Employee employee = new Employee("Sureena","Wadhwa","Female","Technical");
 
         doReturn(command).when(request).toCommand();
         doReturn(employee).when(employeeService).saveEmployeeData(command);

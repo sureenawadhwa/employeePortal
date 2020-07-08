@@ -42,7 +42,7 @@ public class EmployeeStepDefs {
 
     @Given("^a user Sureena created an employee$")
     public void a_user_Sureena_created_an_employee() throws JsonProcessingException {
-        CreateEmployeeRequest employeeRequest = new CreateEmployeeRequest("Sureena");
+        CreateEmployeeRequest employeeRequest = new CreateEmployeeRequest("Sureena","Wadhwa","Female","Technical");
         jsonRequestBody = mapper.writeValueAsString(employeeRequest);
     }
 

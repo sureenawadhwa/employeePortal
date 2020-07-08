@@ -11,10 +11,16 @@ import lombok.NoArgsConstructor;
 public class CreateEmployeeRequest {
 
     private String firstName;
+    private String lastName;
+    private String gender;
+    private String department;
 
     public CreateEmployeeCommand toCommand() {
         return CreateEmployeeCommand.builder()
                 .firstName(firstName)
+                .lastName(lastName)
+                .gender(gender)
+                .department(department)
                 .build();
     }
 
