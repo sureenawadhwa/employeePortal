@@ -2,6 +2,7 @@ package com.sureena_wadhwa.employeePortal.stepDefinitions;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sureena_wadhwa.employeePortal.GenderEnum;
 import com.sureena_wadhwa.employeePortal.entity.Employee;
 import com.sureena_wadhwa.employeePortal.repository.EmployeeRepository;
 import com.sureena_wadhwa.employeePortal.requests.CreateEmployeeRequest;
@@ -42,7 +43,7 @@ public class EmployeeStepDefs {
 
     @Given("^a user Sureena created an employee$")
     public void a_user_Sureena_created_an_employee() throws JsonProcessingException {
-        CreateEmployeeRequest employeeRequest = new CreateEmployeeRequest("Sureena","Wadhwa","Female","Technical");
+        CreateEmployeeRequest employeeRequest = new CreateEmployeeRequest("Sureena","Wadhwa", GenderEnum.FEMALE,"Technical");
         jsonRequestBody = mapper.writeValueAsString(employeeRequest);
     }
 
@@ -61,5 +62,8 @@ public class EmployeeStepDefs {
         Optional<Employee> maybeEmployee = repository.findById(1L);
         assertThat(maybeEmployee).isNotEmpty();
         assertThat(maybeEmployee.get().getFirstName()).isEqualToIgnoringCase("Sureena");
+        assertThat(maybeEmployee.get().getLastName()).isEqualToIgnoringCase("Wadhwa");
+        assertThat(maybeEmployee.get().getGender()).isEqualByComparingTo(GenderEnum.FEMALE);
+        assertThat(maybeEmployee.get().getDepartment()).isEqualToIgnoringCase("Technical");
     }
 }

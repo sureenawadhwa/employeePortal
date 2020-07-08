@@ -1,5 +1,6 @@
 package com.sureena_wadhwa.employeePortal.entity;
 
+import com.sureena_wadhwa.employeePortal.GenderEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,14 +15,14 @@ public class Employee {
 
     private String firstName;
     private String lastName;
-    private String gender;
+    private GenderEnum gender;
     private String department;
 
     @Id
     @GeneratedValue
     private Long employeeId;
 
-    public Employee(String firstName,String lastName,String gender,String department)
+    public Employee(String firstName,String lastName,GenderEnum gender,String department)
     {
         this.firstName = firstName;
         this.lastName = lastName;

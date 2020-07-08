@@ -1,5 +1,6 @@
 package com.sureena_wadhwa.employeePortal.requests;
 
+import com.sureena_wadhwa.employeePortal.GenderEnum;
 import com.sureena_wadhwa.employeePortal.commands.CreateEmployeeCommand;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,7 +13,7 @@ public class CreateEmployeeRequest {
 
     private String firstName;
     private String lastName;
-    private String gender;
+    private GenderEnum gender;
     private String department;
 
     public CreateEmployeeCommand toCommand() {
