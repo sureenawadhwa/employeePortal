@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,6 +17,7 @@ public class CreateEmployeeRequest {
     private String lastName;
     private GenderEnum gender;
     private String department;
+    private String dateOfBirth;
 
     public CreateEmployeeCommand toCommand() {
         return CreateEmployeeCommand.builder()
@@ -22,6 +25,7 @@ public class CreateEmployeeRequest {
                 .lastName(lastName)
                 .gender(gender)
                 .department(department)
+                .dateOfBirth(LocalDate.parse(dateOfBirth))
                 .build();
     }
 

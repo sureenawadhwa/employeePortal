@@ -14,7 +14,7 @@ public class EmployeeService {
 
     public Employee saveEmployeeData(CreateEmployeeCommand command) {
         log.info("EmployeeService [start]");
-        Employee employee = new Employee(command.getFirstName(),command.getLastName(),command.getGender(),command.getDepartment());
+        Employee employee = new Employee(command.getFirstName(),command.getLastName(),command.getGender(),command.getDepartment(),command.getDateOfBirth());
         Employee newEmployee = employeeRepository.save(employee);
         log.info("EmployeeService [end]");
         return newEmployee;

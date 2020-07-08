@@ -9,6 +9,8 @@ import com.sureena_wadhwa.employeePortal.service.EmployeeService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalDate;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
@@ -22,7 +24,7 @@ public class EmployeeControllerTest {
     public void should_call_service_test(){
         CreateEmployeeRequest request = mock(CreateEmployeeRequest.class);
         CreateEmployeeCommand command = mock(CreateEmployeeCommand.class);
-        Employee employee = new Employee("Sureena","Wadhwa",GenderEnum.FEMALE,"Technical");
+        Employee employee = new Employee("Sureena","Wadhwa",GenderEnum.FEMALE,"Technical", LocalDate.now());
 
         doReturn(command).when(request).toCommand();
         doReturn(employee).when(employeeService).saveEmployeeData(command);

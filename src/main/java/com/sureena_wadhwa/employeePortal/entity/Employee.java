@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -17,16 +18,18 @@ public class Employee {
     private String lastName;
     private GenderEnum gender;
     private String department;
+    private LocalDate dateOfBirth;
 
     @Id
     @GeneratedValue
     private Long employeeId;
 
-    public Employee(String firstName,String lastName,GenderEnum gender,String department)
+    public Employee(String firstName,String lastName,GenderEnum gender,String department,LocalDate dateOfBirth)
     {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.department = department;
+        this.dateOfBirth = dateOfBirth;
     }
 }

@@ -18,6 +18,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -43,7 +44,7 @@ public class EmployeeStepDefs {
 
     @Given("^a user Sureena created an employee$")
     public void a_user_Sureena_created_an_employee() throws JsonProcessingException {
-        CreateEmployeeRequest employeeRequest = new CreateEmployeeRequest("Sureena","Wadhwa", GenderEnum.FEMALE,"Technical");
+        CreateEmployeeRequest employeeRequest = new CreateEmployeeRequest("Sureena","Wadhwa", GenderEnum.FEMALE,"Technical", "18-10-97");
         jsonRequestBody = mapper.writeValueAsString(employeeRequest);
     }
 
@@ -65,5 +66,6 @@ public class EmployeeStepDefs {
         assertThat(maybeEmployee.get().getLastName()).isEqualToIgnoringCase("Wadhwa");
         assertThat(maybeEmployee.get().getGender()).isEqualByComparingTo(GenderEnum.FEMALE);
         assertThat(maybeEmployee.get().getDepartment()).isEqualToIgnoringCase("Technical");
+
     }
 }
