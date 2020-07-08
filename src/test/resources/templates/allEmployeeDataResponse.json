@@ -1,0 +1,18 @@
+[
+  {
+    "firstName" : "Frank",
+    "lastName": "Kelly",
+    "gender":"MALE",
+    "department":"Technical",
+    "dateOfBirth":"1997-10-18",
+    "employeeId": 1
+  },
+  {
+    "firstName" : "Rachel",
+    "lastName": "Smith",
+    "gender":"FEMALE",
+    "department":"Asset Management",
+    "dateOfBirth":"1990-10-09",
+    "employeeId": 2
+  }
+]

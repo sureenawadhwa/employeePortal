@@ -6,6 +6,8 @@ import com.sureena_wadhwa.employeePortal.repository.EmployeeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 @Slf4j
 public class EmployeeService {
 
@@ -18,6 +20,10 @@ public class EmployeeService {
         Employee newEmployee = employeeRepository.save(employee);
         log.info("EmployeeService [end]");
         return newEmployee;
+    }
+
+    public List<Employee> getAllEmployeeData() {
+        return (List<Employee>) employeeRepository.findAll();
     }
 
 }
