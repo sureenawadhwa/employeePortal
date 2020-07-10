@@ -14,6 +14,9 @@ Do a maven install
 Start Spring application
 > mvn spring-boot:run
 
+API can be accessed from following URL
+> http://localhost:8080/employee
+
 ## Technologies Involved
 - Spring boot
 - REST API
