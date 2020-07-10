@@ -30,4 +30,5 @@ API can be accessed from following URL
 
 ## Development processes
 - **Test-Driven Development**
-- **Behavior-Driven Development** using cucumber and Gherkin
+- **Behavior-Driven Development** using cucumber and Gherkin. Find feature files at: 
+    > /src/test/features
