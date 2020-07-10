@@ -25,7 +25,7 @@ public class CreateEmployeeRequest {
                 .lastName(lastName)
                 .gender(gender)
                 .department(department)
-                .dateOfBirth(LocalDate.parse(dateOfBirth))
+                .dateOfBirth(dateOfBirth.length() != 0 ? LocalDate.parse(dateOfBirth) : null)
                 .build();
     }
 

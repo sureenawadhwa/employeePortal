@@ -14,7 +14,7 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public Employee saveEmployeeData(CreateEmployeeCommand command) {
+    public Employee saveEmployeeData(CreateEmployeeCommand command){
         log.info("EmployeeService [start]");
         Employee employee = new Employee(command.getFirstName(),command.getLastName(),command.getGender(),command.getDepartment(),command.getDateOfBirth());
         Employee newEmployee = employeeRepository.save(employee);
